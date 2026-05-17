@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Good Shepherd School</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* CSS styling for the Automated Hero Banner Slideshow */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            height: 450px;
+            overflow: hidden;
+            background-color: #000;
+        }
+        .slides-wrapper {
+            display: flex;
+            width: 300%;
+            height: 100%;
+            animation: schoolSlideshow 15s infinite ease-in-out;
+        }
+        .slide-img {
+            width: 33.333%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        @keyframes schoolSlideshow {
+            0%, 28% { transform: translateX(0%); }
+            33%, 61% { transform: translateX(-33.333%); }
+            66%, 94% { transform: translateX(-66.666%); }
+            100% { transform: translateX(0%); }
+        }
+        .slider-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.45);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #ffffff;
+            padding: 20px;
+            box-sizing: border-box;
+            z-index: 5;
+        }
+        .animate-school-name {
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+            animation: textFadeTracking 2.5s ease-out infinite alternate;
+        }
+        @keyframes textFadeTracking {
+            0% { letter-spacing: 1px; opacity: 0.8; transform: scale(0.98); }
+            100% { letter-spacing: 4px; opacity: 1; transform: scale(1.02); }
+        }
+
+        /* Side-by-Side Dual Box Grid Layout */
+        .contact-row-grid {
+            display: flex;
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+            justify-content: center;
+            align-items: stretch;
+        }
+        .contact-card-box {
+            flex: 1;
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-top: 4px solid #2e7d32;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            padding: 30px;
+            box-sizing: border-box;
+            text-align: left;
+        }
+        .contact-box-title {
+            margin-top: 0;
+            margin-bottom: 25px;
+            color: #222;
+            border-bottom: 2px solid #2e7d32;
+            padding-bottom: 10px;
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .contact-item {
+            display: flex;
+            margin-bottom: 18px;
+            font-size: 15px;
+            line-height: 1.5;
+            color: #333333;
+        }
+        .contact-item:last-of-type {
+            margin-bottom: 0;
+        }
+        .contact-label {
+            font-weight: 600;
+            width: 35%;
+            color: #555555;
+        }
+        .contact-value {
+            width: 65%;
+        }
+        .contact-value a {
+            color: #1565c0;
+            text-decoration: none;
+        }
+        .contact-value a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Interactive Small Links and Buttons */
+        .whatsapp-link {
+            color: #25D366 !important;
+            font-weight: bold;
+            margin-left: 8px;
+            font-size: 14px;
+        }
+        .social-btn {
+            display: inline-block;
+            padding: 6px 12px;
+            font-size: 13px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-right: 10px;
+            margin-top: 5px;
+            color: #fff !important;
+        }
+        .btn-youtube { background-color: #d32f2f; }
+        .btn-facebook { background-color: #3b5998; }
+
+        /* Centered Bottom-Middle Footer Styling Block */
+        .site-footer {
+            background-color: #222222;
+            color: #bbbbbb;
+            padding: 30px 0;
+            font-size: 14px;
+            text-align: center;
+            border-top: 3px solid #2e7d32;
+            margin-top: 40px;
+            width: 100%;
+        }
+        .site-footer .container { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+        .site-footer p { margin: 5px 0; }
+
+        @media (max-width: 900px) {
+            .contact-row-grid { flex-direction: column; gap: 25px; padding: 0 15px; }
+            .slider-container { height: 250px; }
+            .animate-school-name { font-size: 1.5rem; }
+        }
+        @media (max-width: 600px) {
+            .contact-item { flex-direction: column; margin-bottom: 15px; }
+            .contact-label { width: 100%; margin-bottom: 3px; }
+            .contact-value { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="container flex-header"><b>Our School Motto:</b> <marquee class="motto-marquee">"To Learn, To Lead"</marquee></div>
+    </div>
+
+    <div class="nav-wrapper">
+        <div class="container nav-container">
+            <img src="images/logo.png" alt="School Logo" class="logo">
+            <button class="menu-toggle" id="mobile-menu">☰</button>
+            <nav id="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="admission.html">Admission</a>
+                <a href="about.html">About Us</a>
+                <a href="faculty.html">Faculty Members</a>
+                <a href="events.html">Events</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="notice.html">Notice</a>
+                <a href="contact.html" class="active">Contact Us</a>
+                <a href="blog.html">Blog</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Universal Image Slideshow Hero Block -->
+    <div class="slider-container">
+        <div class="slides-wrapper">
+            <img src="images/slider.jpg" alt="School Campus View" class="slide-img">
+            <img src="images/about-us.jpg" alt="Students in Classroom" class="slide-img">
+            <img src="images/slider.jpg" alt="School Activities" class="slide-img">
+        </div>
+        <div class="slider-overlay">
+            <h1 class="animate-school-name">CONTACT US</h1>
+            <p style="font-size: 1.2rem; margin-top: 10px; font-weight: 300; text-shadow: 1px 1px 4px rgba(0,0,0,0.6);"></p>
+        </div>
+    </div>
+
+    <div class="main-section" style="padding: 50px 0;">
+        <div class="container">
+            
+            <!-- Side-by-Side Flexible Container Layout -->
+            <div class="contact-row-grid">
+                
+                <!-- Box 1: School General Information -->
+                <div class="contact-card-box">
+                    <h2 class="contact-box-title">📍 School Profile</h2>
+                    
+                    <div class="contact-item">
+                        <div class="contact-label">Address:</div>
+                        <div class="contact-value">Chapahati - Nogorpara, South West Garo Hills, Meghalaya - 794106</div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-label">Office Phone:</div>
+                        <div class="contact-value">
+                            <a href="tel:+919863106661">+91 98631 06661</a>
+                            <a href="https://wa.me" target="_blank" class="whatsapp-link">💬 WhatsApp</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-label">Official Email:</div>
+                        <div class="contact-value"><a href="mailto:gssschapahati@gmail.com">gssschapahati@gmail.com</a></div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-label">Social Media:</div>
+                        <div class="contact-value">
+                            <a href="#" target="_blank" class="social-btn btn-youtube">YouTube</a>
+                            <a href="#" target="_blank" class="social-btn btn-facebook">Facebook</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Box 2: Key Contactable Persons -->
+                <div class="contact-card-box">
+                    <h2 class="contact-box-title">👤 Key Personnel Contacts</h2>
+                    
+                    <div class="contact-item">
+                        <div class="contact-label">Principal:</div>
+                        <div class="contact-value">
+                            <strong>Fr. Francis Kizhakkevelikakathu</strong><br>
+                            <a href="tel:+918414977686">+91 84149 77686</a>
+                            <a href="https://wa.me" target="_blank" class="whatsapp-link">💬 WhatsApp</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-label">Headmistress:</div>
+                        <div class="contact-value">
+                            <strong>Sr. Brijitha N Marak</strong><br>
+                            <a href="tel:+918974822126">+91 89748 22126</a>
+                            <a href="https://wa.me" target="_blank" class="whatsapp-link">💬 WhatsApp</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-label">1st Head Teacher:</div>
+                        <div class="contact-value">
+                            <strong>Sir. Nishit Ranjan Ghosh</strong><br>
+                            <a href="tel:+917005783404">+91 70057 83404</a>
+                            <a href="https://wa.me" target="_blank" class="whatsapp-link">💬 WhatsApp</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-label">2nd Head Teacher:</div>
+                        <div class="contact-value">
+                            <strong>Sir. Jekush D Sangma</strong><br>
+                            <a href="tel:+916009690235">+91 60096 90235</a>
+                            <a href="https://wa.me" target="_blank" class="whatsapp-link">💬 WhatsApp</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-label">Head Clerk (LDA):</div>
+                        <div class="contact-value">
+                            <strong>Sir. Sengkan M Sangma</strong><br>
+                            <a href="tel:+918131813772">+91 81318 13772</a> <a href="https://wa.me" target="_blank" class="whatsapp-link">💬 WA</a><br>
+                            <a href="tel:+918258813963">+91 82588 13963</a> <a href="https://wa.me" target="_blank" class="whatsapp-link">💬 WA</a><br>
+                            <span style="font-size: 13px; color: #666;">Email: <a href="mailto:sengkanxangma@gmail.com">sengkanxangma@gmail.com</a></span>
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!-- End of Grid -->
+
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 Good Shepherd Higher Secondary School, Chapahati. All Rights Reserved.</p>
+            <p style="font-size: 12px; color: #888;">Managed by Good Shepherd Church Chapahati | Powered by Local Administration Desk</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
